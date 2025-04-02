@@ -1,0 +1,263 @@
+
+:root {
+    --primary-color: #8b5cf6;
+    --secondary-color: #a78bfa;
+    --background-color: #f5f3ff;
+    --card-background: #ffffff;
+    --text-color: #4c1d95;
+    --border-color: #ddd6fe;
+    --success-color: #7c3aed;
+    --danger-color: #c084fc;
+    --warning-color: #9333ea;
+    --info-color: #6d28d9;
+}
+
+.dark-mode {
+    --primary-color: #a78bfa;
+    --secondary-color: #8b5cf6;
+    --background-color: #2e1065;
+    --card-background: #4c1d95;
+    --text-color: #f5f3ff;
+    --border-color: #7c3aed;
+    --success-color: #8b5cf6;
+    --danger-color: #c084fc;
+    --warning-color: #9333ea;
+    --info-color: #6d28d9;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    letter-spacing: 0.015em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.display-4 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.lead {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--secondary-color);
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card {
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05), 0 10px 15px -3px rgba(0,0,0,0.1);
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+    backdrop-filter: blur(10px);
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    color: var(--text-color);
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    letter-spacing: 0.01em;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(37, 99, 235, 0.3);
+}
+
+.navbar {
+    backdrop-filter: blur(10px);
+    background-color: var(--primary-color) !important;
+    box-shadow: 0 4px 6px rgba(139, 92, 246, 0.2);
+}
+
+.navbar-brand {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+.question-card {
+    background: var(--card-background);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.question-text {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+    color: var(--text-color);
+}
+
+.hint-text {
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+    padding: 0.75rem;
+    background: rgba(var(--info-color), 0.1);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.question-timer {
+    font-weight: 600;
+    color: var(--warning-color);
+}
+
+.table {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.table thead th {
+    background-color: rgba(var(--primary-color), 0.1);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+}
+
+.alert {
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    font-weight: 500;
+}
+
+.form-control {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.question-category {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.score-display {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.achievement-badge {
+    background: var(--card-background);
+    padding: 12px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--border-color);
+}
+
+.share-btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.share-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+table {
+    background-color: var(--card-background);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+table th {
+    background-color: rgba(0,0,0,0.05);
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+table td, table th {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 10px 20px;
+    font-weight: 500;
+}
+
+.alert {
+    border-radius: 12px;
+    border: none;
+}
+
+.form-control, .form-select {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: var(--card-background);
+    color: var(--text-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.table {
+    color: var(--text-color);
+}
+
+.table thead th {
+    background-color: rgba(var(--primary-color), 0.1);
+}
+
+.alert {
+    background-color: var(--card-background);
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+
+.form-check-input {
+    background-color: var(--card-background);
+    border-color: var(--border-color);
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}

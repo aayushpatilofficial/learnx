@@ -1,0 +1,43 @@
+category,question,answer,difficulty,hint
+Maths,How many years are there in a decade?,10,easy,deca=5+5
+Maths,How many months are there in a century?,1200,easy,1year=12 months
+Maths,Which shape has 4 equal sides?,square,easy,think of a shape that is often reffered to as perfect square
+Maths,A Triangle which has all the sides equal?,equilateral triangle,easy,three sided figure
+Maths,What is the sum of angle in a triangle?,180,easy,if the same as the number of degrees in the straight line
+Maths,How many seconds are there in a hour?,3600,easy,multiply the number of minutes in an hour by the number of seconds in a minute
+Maths,What is the sum of the first five prime number?,28,easy,prime numbers are 2;3;5;7;11
+Maths,How many faces does the cube have?,6,easy,count the sides of dice
+Maths,To find the distance around the figure we find its____________?,area,easy,the space covered
+Maths,The smallest natural number is_______?,1,easy,natural numbers start from the number you use to count objects
+Maths,How many zeros are there in one million?,6,easy,think of how many groups of three zeros make up the number
+Maths,What is the smallest even number,0,easy,its also the smallest whole number
+Maths,What is the smallest whole number?,0,easy,its also thesmallest even number
+Maths,What is the median of the numbers 3;7;9;2;5?,5,easy,arrange them in ascending order and find the middle number
+Maths,How many edges does the cube have?,12,easy,cont the lines forming its shape
+Maths,How many right angles does a rectangle have?,4,easy,think about rectangle how many 90degree angles does it have
+Maths,What is a name of shape that is round and has no corners?,circle,easy,think of shape that has no corners
+Maths,What is the name of the line that connects two opposite corners of rectangle?,diagonal,easy,think of rectangle now imagine drawing a line from one corner to the opposite corner what is the name of this line?
+Maths,How many vertices does the triangle have?,3,easy,think of the corners of a triangle.how many corners does the triangle have?
+Maths,What is the term for the point where two lines meet?,vertex,easy,think of a corner of a shape where two lines meet to form a corner what do we call that point?
+Maths,A line segment has no length?,false,easy,that is bounded by two distinct end points
+Maths,What is the value of 5^0?,1,easy, any number raise to the power of 0=1
+Maths,A farmer has 10 sheeps. all exept  3 ran away how many sheeps are left?,3,easy,"read carefully"
+Maths,A basket contains 5 apples you take away 3 how many apples are U left with ?,3,easy,you took 3 apples
+fun trivia,a rooster lays an egg on top of barn which way does the egg roll?,no,easy,use your brain
+Maths,you are in a race you pass the person on the second place which place are u in now ?,2,easy,think about the wording carefully
+Maths,What weighs more a ton of feather or a ton of bricks ?,both are same,easy,"Think carefully"
+Maths,how many months have 28 days?,12,easy,every month has days
+Maths,i am a number,if you double me you get 8.what number am i?,4,easy,because__x2=8
+Maths,a pair of shoes cost Rs.700.how much does one shoe cost?,Rs.375,easy,divide 750 by 2
+Math,How many years are there in a decade?,10,easy,deca=5+5
+Math,How many months are there in a century?,1200,easy,1year=12 months
+Math,What is 15 x 4?,60,easy,Think multiplication tables
+Math,What is the square root of 144?,12,medium,Think perfect squares
+Science,What is the chemical symbol for Gold?,Au,medium,Think periodic table
+Science,Which planet is known as the Red Planet?,Mars,easy,Think of its color
+History,Who was the first President of the United States?,George Washington,medium,Think founding fathers
+Geography,What is the largest continent?,Asia,easy,Think about land mass
+Technology,What does CPU stand for?,Central Processing Unit,medium,Think computer components
+Literature,Who wrote Romeo and Juliet?,William Shakespeare,easy,Famous playwright
+Sports,In which sport is a touchdown scored?,Football,easy,Think American sports
+Music,How many keys are on a standard piano?,88,medium,Count black and white keys

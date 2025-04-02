@@ -1,0 +1,18 @@
+[
+    {
+        "category": "Math",
+        "question": "What is 2 + 2?",
+        "answer": "4",
+        "difficulty": "Easy",
+        "hint": "Think simple addition.",
+        "options": "1;2;3;4"
+    },
+    {
+        "category": "Science",
+        "question": "What is the chemical symbol for water?",
+        "answer": "H2O",
+        "difficulty": "Easy",
+        "hint": "It consists of Hydrogen and Oxygen.",
+        "options": "H2O;O2;CO2;NaCl"
+    }
+]

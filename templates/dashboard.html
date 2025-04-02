@@ -1,0 +1,125 @@
+
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-success">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <h2>Welcome, {{ user.username }}!</h2>
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Your Score</h5>
+                    <p class="score-display">{{ user.score }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Quick Actions</h5>
+                    <a href="/quiz" class="btn btn-primary">Start New Quiz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Leaderboard</h5>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Username</th>
+                                <th>Score</th>
+                                <th>Badges</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for user in top_users %}
+                            <tr>
+                                <td>{{ loop.index }}</td>
+                                <td>{{ user.username }}</td>
+                                <td>{{ user.score }}</td>
+                                <td>{{ user.badges|join(', ') }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Your Achievements</h5>
+                    <div class="achievements-container">
+                        {% for badge in user.badges %}
+                        <div class="achievement-badge">
+                            <i class="fas fa-medal"></i>
+                            <span>{{ badge }}</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Statistics</h5>
+                    <div class="stats-container">
+                        <p>Total Quizzes: {{ user.total_quizzes }}</p>
+                        <p>Average Score: {{ user.avg_score }}%</p>
+                        <p>Best Category: {{ user.best_category }}</p>
+                        <p>Practice Sessions: {{ user.practice_sessions }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Share Your Progress</h5>
+                    <div class="share-buttons">
+                        <button class="btn btn-primary share-btn" onclick="shareScore('twitter')">
+                            <i class="fab fa-twitter"></i> Share on Twitter
+                        </button>
+                        <button class="btn btn-primary share-btn" onclick="shareScore('facebook')">
+                            <i class="fab fa-facebook"></i> Share on Facebook
+                        </button>
+                        <button class="btn btn-success share-btn" onclick="shareScore('whatsapp')">
+                            <i class="fab fa-whatsapp"></i> Share on WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function shareScore(platform) {
+    const score = "{{ user.score }}";
+    const message = `I just scored ${score} points on the Quiz App! Can you beat my score?`;
+    if (platform === 'twitter') {
+        window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(message)}`);
+    } else if (platform === 'facebook') {
+        window.open(`https://www.facebook.com/sharer/sharer.php?quote=${encodeURIComponent(message)}`);
+    } else if (platform === 'whatsapp') {
+        window.open(`https://wa.me/?text=${encodeURIComponent(message)}`);
+    }
+}
+</script>
+{% endblock %}
