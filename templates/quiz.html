@@ -1,12 +1,12 @@
-
 {% extends "base.html" %}
 {% block content %}
-<div class="quiz-container">
-    <div class="card mb-4">
+<div class="container my-5 quiz-container">
+    <div class="card shadow-sm border-0 mb-4">
         <div class="card-body">
-            <h2 class="card-title text-center mb-4">Quiz Settings</h2>
-            <div class="row">
+            <h2 class="card-title text-center fw-bold mb-4">Quiz Settings</h2>
+            <div class="row g-3">
                 <div class="col-md-4">
+                    <label for="category" class="form-label">Category</label>
                     <select class="form-select" id="category">
                         <option value="all">All Categories</option>
                         <option value="Mathematics">Mathematics</option>
@@ -17,6 +17,7 @@
                     </select>
                 </div>
                 <div class="col-md-4">
+                    <label for="difficulty" class="form-label">Difficulty</label>
                     <select class="form-select" id="difficulty">
                         <option value="all">All Difficulties</option>
                         <option value="easy">Easy</option>
@@ -24,10 +25,10 @@
                         <option value="hard">Hard</option>
                     </select>
                 </div>
-                <div class="col-md-4">
-                    <div class="form-check">
+                <div class="col-md-4 d-flex align-items-end">
+                    <div class="form-check ms-2">
                         <input class="form-check-input" type="checkbox" id="practiceMode">
-                        <label class="form-check-label" for="practiceMode">
+                        <label class="form-check-label fw-semibold" for="practiceMode">
                             Practice Mode (No Score)
                         </label>
                     </div>
@@ -35,34 +36,35 @@
             </div>
         </div>
     </div>
-    <div class="card">
+
+    <div class="card shadow-sm border-0">
         <div class="card-body">
-            <h2 class="card-title text-center mb-4">Quiz Time!</h2>
+            <h2 class="card-title text-center fw-bold mb-4">Quiz Time!</h2>
             <form method="POST" id="quizForm">
-                <div id="currentScore" class="alert alert-info mb-4">Current Score: 0</div>
+                <div id="currentScore" class="alert alert-primary text-center fw-semibold mb-4">Current Score: 0</div>
+
                 {% for index, question in enumerate(questions) %}
-                <div class="question-card mb-4" id="question_{{ index }}" style="{% if index > 0 %}display: none;{% endif %}">
-                    <h5 class="question-category">Category: {{ question.category }}</h5>
-                    <p class="question-text">{{ question.question }}</p>
-                    <div class="hint-text text-muted mb-2">Hint: {{ question.hint }}</div>
-                    <div class="question-timer mb-2">Time remaining: <span id="timer_{{ index }}">60</span>s</div>
-                    <div class="form-group">
-                        <input type="text" 
-                               class="form-control" 
-                               name="answer_{{ index }}" 
-                               id="answer_{{ index }}"
-                               required 
-                               placeholder="Your answer">
+                <div class="question-card border rounded-3 p-4 mb-4 bg-light" id="question_{{ index }}" style="{% if index > 0 %}display: none;{% endif %}">
+                    <div class="mb-2 small text-muted">Category: <strong>{{ question.category }}</strong></div>
+                    <p class="fs-5 fw-semibold">{{ question.question }}</p>
+                    <div class="text-muted mb-2 fst-italic">Hint: {{ question.hint }}</div>
+                    <div class="question-timer mb-3">
+                        <span class="badge bg-dark">Time Left: <span id="timer_{{ index }}">60</span>s</span>
                     </div>
-                    <div id="feedback_{{ index }}" class="mt-3" style="display: none;"></div>
-                    <button type="button" class="btn btn-primary mt-3" onclick="checkAnswer({{ index }}, '{{ question.answer }}')">Submit Answer</button>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" name="answer_{{ index }}" id="answer_{{ index }}" placeholder="Your Answer" required>
+                        <label for="answer_{{ index }}">Your Answer</label>
+                    </div>
+                    <div id="feedback_{{ index }}" class="mt-2" style="display: none;"></div>
+                    <button type="button" class="btn btn-success mt-2 w-100" onclick="checkAnswer({{ index }}, '{{ question.answer }}')">Submit Answer</button>
                 </div>
                 {% endfor %}
+
                 <script>
                     let currentQuestion = 0;
                     let totalScore = 0;
                     let totalQuestions = {{ questions|length }};
-                    
+
                     function startTimer(index) {
                         let timeLeft = 60;
                         const timerId = setInterval(() => {
@@ -83,7 +85,7 @@
                     function showFeedback(index, isCorrect, message) {
                         const feedbackDiv = document.getElementById(`feedback_${index}`);
                         feedbackDiv.style.display = 'block';
-                        feedbackDiv.className = `alert ${isCorrect ? 'alert-success' : 'alert-danger'}`;
+                        feedbackDiv.className = `alert mt-2 ${isCorrect ? 'alert-success' : 'alert-danger'}`;
                         feedbackDiv.textContent = message;
                     }
 
@@ -101,24 +103,25 @@
                     function checkAnswer(index, correctAnswer) {
                         const userAnswer = document.getElementById(`answer_${index}`).value.trim().toLowerCase();
                         const isCorrect = userAnswer === correctAnswer.toLowerCase();
-                        
+
                         if (isCorrect) {
                             totalScore++;
                             document.getElementById('currentScore').textContent = `Current Score: ${totalScore}`;
                         }
-                        
+
                         showFeedback(index, isCorrect, isCorrect ? "Correct!" : `Wrong! The correct answer was: ${correctAnswer}`);
                         document.getElementById(`answer_${index}`).disabled = true;
-                        
+
                         setTimeout(() => showNextQuestion(index), 2000);
                     }
 
-                    // Start timer for first question
                     startTimer(0);
                 </script>
+
                 <input type="hidden" name="total_score" id="total_score" value="0">
+
                 <div class="text-center mt-4">
-                    <button type="submit" class="btn btn-primary btn-lg">Submit Answers</button>
+                    <button type="submit" class="btn btn-primary btn-lg px-5">Submit Answers</button>
                 </div>
             </form>
         </div>
